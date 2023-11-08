@@ -1,0 +1,23 @@
+<head></head>
+<body>
+    <script src="https://ace-aaa--travelsb.sandbox.my.site.com/prospects/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("ScheduleAppointment:lightningOutGuest",    // name of the Lightning app
+            function() {                  
+                $Lightning.createComponent(
+                   "lightning:flow", // top-level component of your app
+                    { },                  // attributes to set on the component when created
+                    "lightningLocator",   // the DOM location to insert the component
+                    function(cmp) {
+                        console.log('Hi from callback');// callback when component is created and active on the page
+                        cmp.startFlow('Copy_of_Inbound_New_Guest_Appointment_Travel');
+                    }
+                );
+            }, 'https://ace-aaa--travelsb.sandbox.my.site.com/prospects'  // Community endpoint
+        );
+    </script>
+
+<div id="lightningLocator">
+  <p>Lightning Component mentioned in the Script is invoked from here</p>
+</div>
+</body>
