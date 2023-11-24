@@ -24,17 +24,26 @@
             $Lightning.createComponent(
                 "lightning:flow",    // top-level component of your app
                 { 
-                    "flowName": "Copy2_of_Inbound_New_Guest_Appointment_Travel_V2",
-                   "inputVariables": [
+                   //  "flowName": "Copy2_of_Inbound_New_Guest_Appointment_Travel_V2",
+                   // "inputVariables": [
+                   //      {
+                   //          name: "Destination",
+                   //          type: "String",
+                   //          value: destination
+                   //      }
+                   //  ] },    // attributes to set on the component when created
+                "lexcontainer",    // the DOM location to insert the component
+                function(component) {            // API name of the Flow
+                    console.log('Hi from callback');
+
+
+                     var inputVariables: [
                         {
                             name: "Destination",
                             type: "String",
                             value: destination
                         }
-                    ] },    // attributes to set on the component when created
-                "lexcontainer",    // the DOM location to insert the component
-                function(component) {            // API name of the Flow
-                    console.log('Hi from callback');
+                    ] 
                     component.startFlow("Copy2_of_Inbound_New_Guest_Appointment_Travel_V2", inputVariables);
                 }
             );
